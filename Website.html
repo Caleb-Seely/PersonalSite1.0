@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+   <link rel="stylesheet" href="Style.css">
+   <link rel="icon" href="images/icon.jpg" type="image/icon type"> 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+   <title>Home</title>
+
+  
+   </head>
+
+   <body>
+
+      <div class="parallax">
+
+         <div class="container"> 
+         
+            <div class="top-center" id="greeting">Hey You</div>
+      
+            <div class="center" id="timer"> </div>
+                
+            <div id="navbar">             
+               <div class="btn">
+                  <button class="btn" onclick="document.location = 'FakeCoin.html' "> Fake Coin Project </button> 
+                  <button class="btn" onclick="document.location = 'other/Caleb_Seely_Resume.pdf' " target="_blank" > Resume    </button> 
+                  <button class="btn" onclick="document.location = 'Photo_Bio.html' "> Photo Bio </button>   
+               </div> 
+            </div> 
+         </div>
+      </div>
+
+   <div class="profile-row">
+
+   
+      <div class="profile" id="me">
+         
+            <div class="face">
+               <img style="border-radius: 50%;" src="images/Head1.png" alt="Headshot" width=100% height=100% onclick="expand(this);">  
+
+               <div class="title" style="float: center;">
+                  <p> <br>Caleb Seely <br>
+                     Software Developer 
+
+                  </p>
+               </div>
+            </div>
+
+
+           
+
+            <div class="bio"> 
+               Hello, my name is Caleb and I am a Senior at the University of Idaho studying Computer Science. <br> <br> 
+               Take a look at my image bio for a quick visual of who I am.<br> <br>
+               You can see some projects of mine down below. <br><br>
+               I am currently looking for industry experience. <br> <br>            
+               Feel free to reach out for any reason. <br><br>
+               I look forward to hearing from you. <br> <br>   
+               
+            </div>
+      </div>
+
+      <div class="contact">
+            <div style="display: block; padding:15px ;"> 
+               I am currently looking for work.
+            </div>
+            
+
+            <div style=" float: left; width: 50%; background-color: #c1502e;">
+               <img  src="images/resume_icon.png" style="height: 160px;" >
+            </div> 
+
+            <div style="float: right; width: 50%; background-color:red;">
+               <img  src="images/mail.png" >  
+               
+            </div>
+               
+            <img src="images/ig2.png" style="width: 12%; padding: 1%;">
+            <img src="images/git2.png" style="width: 12%; padding:1%;">
+            <img src="images/in2.png" style="width: 12%; padding:1%;">
+
+                  
+      </div>
+
+   </div>
+
+   <div class="parallax" style="height: 50%;"></div>
+
+      <div class="projects">
+            <!-- Three columns -->
+            <div class="row">
+
+               <div class="column" onclick="openTab('b1');" style="background: #587e76;">
+                  Compiler Design
+               </div>       
+
+            <div id="b1" class="containerTab" style="display:none;background:green">
+
+               <div style="padding: 10px;">
+                  <h2> C Compiler</h2>
+                  <h4>Spring 2020</h4>  
+               </div>
+               
+               <div class="column-text" >
+                  <p>To better comprehend how the C compiler I use everyday works, I built my own version. 
+                     The project is well over four thousand lines of code that I have written. There are 
+                     also numerous other files with code that was used to assist this project. Below you 
+                     will find just the smallest summary of what the project looked like.</p>
+               </div>
+
+               <div>  
+                  <div class="column-text">
+                     <h3 >Regular expressions</h3>
+                     <p>I used flex to simplify the process in finding reqular expressions. <br>
+                        You can look at all the regular expressions <a href="code/parser.l"> here.</a> </p>
+                  </div>
+
+                  <div class="column-text">
+                     <h3>Grammar rules</h3>
+                     <p>Bison was used for the grammar rules that made up this language. The grammar I 
+                        was trying to recreate was not ambigious and takles the dangling else problem. <br>
+                           ou can take a look at the whole file <a href="code/parser.y"> here.</a> </p> 
+                  </div>
+
+                  <div class="column-text">
+                     <h3>Tree nodes</h3>
+                     <p>As the code was being parsed, I was bulding a tree to link all the critical dta found by the parsing.<br>
+                        You can see what a tree node looks like <a href="code/printtree.h"> here </a></p>
+                  </div>
+
+                  <div class="column-text">
+                     <h3>Semantic analysis</h3>
+                     <p>After I built the tree, I used it for type checking and other context errors. Some debugging features were also added. There are several flags 
+                        that can be set to trigger a visual print of the tree with or without types and an explicit grammar walkthrough.<br> 
+                        The visual tree code is <a href="code/printtree.c" > here.</a>
+                        <br> Semantic analysis is  <a href="code/semantic.c"> here.</a>  
+                     </p>
+                  </div>
+                  
+                  <div class="column-text">
+                     <h3>Memory allocation</h3>
+                     <p>Once a tree is confirmed to have no erros, the program begins assigning memory usage for each node. Most nodes used one spot in memory but arrays 
+                        used one more than their given size. Then I built frames around each function for its place in memory. Now to generate the code that was going to be read by a
+                        machine, I just needed to look at the memory sizes, their offsets and provide the proper sequence of LD, ADD, ST and backpatches. <br>Some 
+                        of that code can be found<a href="code/codeGen.c"> here. </a></p>
+                  </div>
+
+                  
+                     <p style="text-align: justify; padding: 10px;">
+                        This was my first large project. A deeper understanign of each part would have made for more efficient code, especially in my
+                        error checking and analysis. The code colud also use more comments in some places but the size of the project forced me to 
+                        better that skill while I was working on it. A majority of this project was new concepts for me. I had never written extensive tree code
+                        linked from flex and bison and I had done little assembly code. I was able to get through most of my issues (grammar rules, regular expression 
+                        oddities and ID types to name a few) leading to a working product but it is not everything I planned for. The final code has trouble 
+                        with arrays in particual and a range of obvious edge cases. I am happy with what I have learned from it and have no plans to fix those 
+                        bugs in the near future. 
+                     </p>
+               </div> <!--End Class Row-->
+
+            </div> <!--End Tab 1-->
+
+            <div class="column" onclick="openTab('b2');" style="background:#c1502e;">
+               Database Implementation
+            </div>
+                   
+            <div id="b2" class="containerTab" style="display:none;background:#f7786b">
+            
+              <div style="padding: 10px;">
+                  <h2>Schedule Planner</h2>
+                  <img id="myImg" src="images/Add.png" alt="Schedule Interface" style="width:100%;max-width:300px;float: right; padding: 10px;" onclick="myFunction(this);" >
+                  
+                  <h4>Spring 2020</h4>
+               </div>
+               
+               <p style="padding:10px; text-align: justify;">This project uses a database to suggest classes for a computer science student based on their career intrests. New users add themsleves to the database with the add keyword followed by their name, student ID and industy they are intrested in.
+                  They can use keywords to add classes they have taken and get semester specific class recomendations based on previously taken courses.
+                  At any point a user can return to the page and place their ID in the corner to continue using the software. They can also access the list 
+                  of all classes as well as the classes they have completed. </p>     
+
+               <h3 style="padding: 10px;"><br>Tools</h3>
+               <p style="padding: 10px;">The core of this project is written in PHP but it has some HTML and CSS, I also used XAMP, Apache and MySQL. 
+                  The code is <a href="code/Ui_Schedule.php">here.</a></p>
+               
+               <p style="padding: 10px; text-align: justify;"> <br>This was my first experience with a live database. I am happy with how the project finished but it took a lot of patience and 
+                  learning to get it there. Setting everything up to work together was a frustrating experience and I deleted my database on accident 
+                  on multiple occasions. It is a sobering experince to find all data gone because I was trying to solve a connection issue but it taught me
+                  a valuable lesson in file backups. 
+               </p>
+
+            </div> <!---End Tab 2-->
+
+            <div class="column" onclick="openTab('b3');" style="background:#034f84;">
+               C++ 
+            </div>
+
+            <div id="b3" class="containerTab" style="display:none;background: #034f84">
+               
+               <div style="padding: 10px;">
+                  <h2>Maze Solution</h2>
+                  <img id="myImg" src="images/Maze3.jpg" alt="Schedule Interface" style="height: 300px; float: right; padding: 20px; " onclick="expand(this);" >
+                  <h4>Spring 2018</h4>
+               </div>
+
+               
+               <div style=" padding: 10px; text-align: justify;">
+                  <p>This project is early practice of a stack data structure. The program reads in a maze file built from a matrix of periods 
+                  represnting open cells, hashes for closed cells and S for start G for goal. The c++ program then pushes available cells
+                  on a stack and pushes coordnates off when it runs out of cells to push. The program finishes when it finds its goal or runs out of
+                  possible cells. </p>
+               </div>
+
+               <div style=" padding: 10px; text-align: justify;">
+                  <p> <br>This program uses breadth first search and prioritizes down left. The code could be adjusted to follow a depth first approach 
+                     but I do not find it necessary. 
+                  </p>
+         
+                  <h3><br>Additions</h3>
+                  <p>I have returned to this code of several occasions to play with it. I first added a print function within the solution loop
+                     this allows for a visible walkthrough of the algorithm. It was difficult to see the visited cells so I added colors for a 
+                     stronger visual. The last addition I made was an alias to run the three above mazes. 
+                  </p>
+                  <p>The solution <a href="code/MazeSolution.cpp">code.</a></p>
+                  <p>The input file <a href="code/Maze02.txt"> maze 3.</a></p>
+               </div>
+             </div> <!---End Tab 3-->  
+
+            </div> <!--Row titles End-->
+
+      </div> <!---Projects End-->
+      
+      <div class="parallax" style="height: 50%; background-image: url('images/xc_field2.png'); "></div>
+
+      
+
+         <div class="college">
+
+            
+               <img class="leftRunning" id="myImg" src="images/running1.jpg" alt="Ne running"  onclick="expand(this);" >
+            
+               <img class="rightRunning" id="myImg" src="images/running3.jpg" alt="Me running" onclick="expand(this);" >
+
+               <p class="running" style="padding: 10px; text-align: center; font-size: 25px; ">
+                  I am incredibly greatful for the opportunity to run at a high level. <br> Balancing a busy schedule was well worth it. 
+                  <br> I would not change a thing. <br> 
+               </p> 
+               
+               <img class="rightRunning2" id="myImg" src="images/running3.jpg" alt="Me running" onclick="expand(this);" >
+
+                  <!-- <ul style="width: 25%; float: right; background-color: green;">
+                     A look at the names
+                        <li>5th place Big Sky Confrence 1500m.</li>
+                        <li>5th man U of I West Coast Regional team.</li>
+                        <li>2nd place Big Sky DMR.</li>
+                        <li>Beaten a xc national chanpion and an olympian</li>
+                        <li>University of Idaho distance team captain</li>
+                     </ul> -->
+
+                     <div class="times" >    
+                           <br>My career by the numbers.<br>
+                           <img  src="images/times.png">
+                     </div>  
+                
+                    <p style="padding: 10px; font-size: 25px; text-align: center; "> Special thank you for the coaches, teammates and competitors. 
+                      <br>I owe a lot of my personal development to the people who surround me everyday. </p> 
+                   
+               
+            
+         </div>
+
+      
+         <div class="parallax" ></div>
+
+       <script>
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+              if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+              } 
+              else {
+                document.getElementById("navbar").style.top = "-50px";
+              }
+              prevScrollpos = currentScrollPos;
+              if(window.pageYOffset == 0){
+                  document.getElementById("navbar").style.background = "transparent";
+                  document.getElementById("navbar").style.transition = ".6s";
+               }
+               else{
+                  document.getElementById("navbar").style.background = "black";
+                  document.getElementById("navbar").style.transition = ".6s";
+               }
+            }
+      </script> 
+
+
+       
+
+      <script>
+         //Project tabs
+         function openTab(tabName) {
+           var i, x;
+           x = document.getElementsByClassName("containerTab");
+           
+           if(document.getElementById(tabName).style.display == "block"){
+               document.getElementById(tabName).style.display = "none";
+           }
+           else{
+               for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+               }
+               document.getElementById(tabName).style.display = "block";           
+           }
+   
+         }
+      </script>
+
+      <div id="myModal" class="modal">
+         <span class="close">&times;</span>
+         
+         <img class="modal-content" id="img01">
+         <div id="caption"> </div>
+      </div>
+
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");
+         
+         // Get the image and insert it inside the modal - use its "alt" text as a caption
+         var img = document.getElementById("myImg");
+         var modalImg = document.getElementById("img01");
+         var captionText = document.getElementById("caption");
+         
+         function expand(img){
+         modal.style.display = "block";
+         modalImg.src = img.src;
+         captionText.innerHTML = " ";
+         }
+         
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+         
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() { 
+         modal.style.display = "none";
+         }
+      </script>  
+   
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");
+         
+         // Get the image and insert it inside the modal - use its "alt" text as a caption
+         var img = document.getElementById("myImg");
+         var modalImg = document.getElementById("img01");
+         var captionText = document.getElementById("caption");
+         img.onclick = function(){
+         modal.style.display = "block";
+         modalImg.src = this.src;
+         captionText.innerHTML = " ";
+         }
+         
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+         
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() { 
+         modal.style.display = "none";
+         }
+      </script>
+
+      <script>
+         //Get the time of day
+         var myDate = new Date();
+         var hrs = myDate.getHours();
+         var greet;
+
+         if (hrs < 12)
+            greet = 'Good Morning';
+         else if (hrs >= 12 && hrs < 17)
+            greet = 'Good Afternoon';
+         else if  (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening';
+
+         document.getElementById("greeting").innerHTML =
+            '<b>' + greet + '</b> ';
+      </script>  
+
+      <script>
+         // Set the date we're counting down to
+         var countDownDate = new Date("May 15, 2021 15:00:00").getTime();
+         
+         // Update the count down every 1 second
+         var x = setInterval(function() {
+         
+               // Get today's date and time
+               var now = new Date().getTime();
+               
+               // Find the distance between now and the count down date
+               var distance = countDownDate - now;
+               
+               // Time calculations for days, hours, minutes and seconds
+               var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+               var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+               var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+               
+               // Display the result in the element with id="demo"
+               
+               document.getElementById("timer").innerHTML ="<b>Time until graduation </b> <p> " + days + " days " + hours + " hours "
+               + minutes + " minutes " + seconds + " seconds </p> ";
+               
+               // If the count down is finished, write some text
+               if (distance < 0) {
+                  clearInterval(x);
+                  document.getElementById("timer").innerHTML = "Graduated!";
+               }
+         }, 1000);
+
+      </script>
+
+   </body> <!---Body END--> 
+
+
+
+</html>
+
